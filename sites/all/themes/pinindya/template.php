@@ -130,3 +130,23 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+function pinindya_theme() {
+  $items = array();
+  // create custom user-login.tpl.php
+  $items['user_login'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'pinindya') . '/templates',
+  'template' => 'user-login',
+  'preprocess functions' => array(
+  'pinindya_preprocess_user_login'
+  ),
+ );
+
+  $items['user_register_form'] = array(
+   'render element' => 'form',
+   'path' => drupal_get_path('theme', 'pinindya') . '/templates',
+   'template' => 'user-register-form',
+ );
+return $items;
+}
